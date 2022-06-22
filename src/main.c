@@ -93,11 +93,12 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   MX_USB_DEVICE_Init();
-  HAL_GPIO_WritePin(EN1_GPIO_Port,EN1_Pin,GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(DIR1_GPIO_Port,DIR1_Pin,GPIO_PIN_SET);
   
   /* USER CODE BEGIN 2 */
-
+  HAL_GPIO_WritePin(DIR1_GPIO_Port,DIR1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(EN1_GPIO_Port,EN1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(DIR2_GPIO_Port,DIR2_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(EN2_GPIO_Port,EN2_Pin, GPIO_PIN_RESET);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -105,7 +106,12 @@ int main(void)
   while (1)
   {  
   /* USER CODE END WHILE */
-
+    HAL_GPIO_WritePin(STP1_GPIO_Port,STP1_Pin,GPIO_PIN_SET);
+    HAL_GPIO_WritePin(STP3_GPIO_Port,STP3_Pin,GPIO_PIN_SET);
+    HAL_Delay(1);
+    HAL_GPIO_WritePin(STP1_GPIO_Port,STP1_Pin,GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(STP3_GPIO_Port,STP3_Pin,GPIO_PIN_RESET);
+    HAL_Delay(1);
   /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
