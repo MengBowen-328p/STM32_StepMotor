@@ -2,6 +2,7 @@
     "files.associations": {
         "stm32f1xx.h": "c",
         "usb_device.h": "c",
-        "usbd_def.h": "c"
+        "usbd_def.h": "c",
+        "cstdint": "c"
     }
 }
