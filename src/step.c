@@ -60,9 +60,9 @@ void STEP2_turn_CW(int times)
     HAL_GPIO_WritePin(DIR2_GPIO_Port,DIR2_Pin,GPIO_PIN_SET);
     for(i=0;i<times;i++)
     {
-        HAL_GPIO_WritePin(STP3_GPIO_Port,STP3_Pin,GPIO_PIN_SET);
+        HAL_GPIO_WritePin(STP2_GPIO_Port,STP2_Pin,GPIO_PIN_SET);
         HAL_Delay(1);
-        HAL_GPIO_WritePin(STP3_GPIO_Port,STP3_Pin,GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(STP2_GPIO_Port,STP2_Pin,GPIO_PIN_RESET);
         HAL_Delay(1);
     }
 }
@@ -74,9 +74,10 @@ void STEP2_turn_CCW(int times)
     HAL_GPIO_WritePin(DIR2_GPIO_Port,DIR2_Pin,GPIO_PIN_RESET);
     for(i=0;i<times;i++)
     {
-        HAL_GPIO_WritePin(STP3_GPIO_Port,STP3_Pin,GPIO_PIN_SET);
+        HAL_GPIO_WritePin(STP2_GPIO_Port,STP2_Pin,GPIO_PIN_SET);
         HAL_Delay(1);
-        HAL_GPIO_WritePin(STP3_GPIO_Port,STP3_Pin,GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(STP2_GPIO_Port,STP2_Pin,GPIO_PIN_RESET);
         HAL_Delay(1);
     }
 }
+

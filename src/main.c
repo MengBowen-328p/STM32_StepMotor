@@ -21,6 +21,7 @@
 #include "usart.h"
 #include "usb_device.h"
 #include "gpio.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
@@ -93,7 +94,6 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   MX_USB_DEVICE_Init();
-  
   /* USER CODE BEGIN 2 */
   HAL_GPIO_WritePin(DIR1_GPIO_Port,DIR1_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(EN1_GPIO_Port,EN1_Pin, GPIO_PIN_RESET);
@@ -105,14 +105,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {  
-  /* USER CODE END WHILE */
-    HAL_GPIO_WritePin(STP1_GPIO_Port,STP1_Pin,GPIO_PIN_SET);
-    HAL_GPIO_WritePin(STP3_GPIO_Port,STP3_Pin,GPIO_PIN_SET);
-    HAL_Delay(1);
-    HAL_GPIO_WritePin(STP1_GPIO_Port,STP1_Pin,GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(STP3_GPIO_Port,STP3_Pin,GPIO_PIN_RESET);
-    HAL_Delay(1);
-  /* USER CODE BEGIN 3 */
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
@@ -141,6 +136,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
@@ -197,4 +193,3 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
-
