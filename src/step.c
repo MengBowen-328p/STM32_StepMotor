@@ -81,3 +81,50 @@ void STEP2_turn_CCW(int times)
     }
 }
 
+void BUSH_MOTOR_CW(int times)
+{
+    int i = 0;
+    for(i=0;i<times;i++)
+    {
+        HAL_GPIO_WritePin(BRUSH_EN1_GPIO_Port,BRUSH_EN1_Pin,GPIO_PIN_SET);
+        HAL_GPIO_WritePin(BRUSH_EN2_GPIO_Port,BRUSH_EN2_Pin,GPIO_PIN_RESET);
+    }
+    HAL_GPIO_WritePin(BRUSH_EN1_GPIO_Port,BRUSH_EN1_Pin,GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(BRUSH_EN2_GPIO_Port,BRUSH_EN2_Pin,GPIO_PIN_RESET);
+}
+
+void BUSH_MOTOR_CCW(int times)
+{
+    int i = 0;
+    for(i=0;i<times;i++)
+    {
+        HAL_GPIO_WritePin(BRUSH_EN1_GPIO_Port,BRUSH_EN1_Pin,GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(BRUSH_EN2_GPIO_Port,BRUSH_EN2_Pin,GPIO_PIN_SET);
+    }
+    HAL_GPIO_WritePin(BRUSH_EN1_GPIO_Port,BRUSH_EN1_Pin,GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(BRUSH_EN2_GPIO_Port,BRUSH_EN2_Pin,GPIO_PIN_RESET);
+}
+
+void MOVE_MOTOR_CW(int times)
+{
+    int i=0;
+    for(i=0;i<times;i++)
+    {
+        HAL_GPIO_WritePin(MOVE_EN1_GPIO_Port,MOVE_EN1_Pin,GPIO_PIN_SET);
+        HAL_GPIO_WritePin(MOVE_EN2_GPIO_Port,MOVE_EN2_Pin,GPIO_PIN_RESET);
+    }
+    HAL_GPIO_WritePin(MOVE_EN1_GPIO_Port,MOVE_EN1_Pin,GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(MOVE_EN2_GPIO_Port,MOVE_EN2_Pin,GPIO_PIN_RESET);
+}
+
+void MOVE_MOTOR_CCW(int times)
+{
+    int i=0;
+    for(i=0;i<times;i++)
+    {
+        HAL_GPIO_WritePin(MOVE_EN1_GPIO_Port,MOVE_EN1_Pin,GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(MOVE_EN2_GPIO_Port,MOVE_EN2_Pin,GPIO_PIN_SET);
+    }
+    HAL_GPIO_WritePin(MOVE_EN1_GPIO_Port,MOVE_EN1_Pin,GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(MOVE_EN2_GPIO_Port,MOVE_EN2_Pin,GPIO_PIN_RESET);
+}
